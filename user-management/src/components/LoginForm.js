@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './LoginForm.css';
 
+
 const LoginForm = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -11,7 +12,7 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <section id="login-section">
+    <section id="login-section" style={{ backgroundImage: `url({https://www.egnyte.com/sites/default/files/inline-images/The%20expansion%20of%20cloud%20applications%20has%20added%20to....png})` }}> 
       <h2>Přihlášení</h2>
       <form id="login-form" onSubmit={handleSubmit}>
         <label htmlFor="username">Uživatelské jméno:</label>
@@ -36,4 +37,4 @@ const LoginForm = ({ onLogin }) => {
   );
 };
 
-export default LoginForm();
+export default LoginForm;

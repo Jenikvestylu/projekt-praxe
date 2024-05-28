@@ -1,20 +1,24 @@
 #login-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-image: url('');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  max-width: 400px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #1abc9c; 
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-#login-form {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
+#login-section h2 {
+  margin-top: 0;
+}
+
+#login-section img {
+  width: 80px;
+  margin-bottom: 20px;
 }
 
 #login-form label {
@@ -24,22 +28,29 @@
 
 #login-form input {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   margin-bottom: 10px;
-  border: none;
-  border-radius: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 #login-form button {
   width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
   background-color: #4CAF50;
   color: white;
+  border: none;
+  padding: 10px;
   cursor: pointer;
+  border-radius: 3px;
+  font-size: 16px;
 }
 
 #login-form button:hover {
   background-color: #45a049;
+}
+
+#login-form button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
 }
