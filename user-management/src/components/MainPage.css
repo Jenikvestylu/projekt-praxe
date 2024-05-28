@@ -1,0 +1,75 @@
+/* Hlavní stránka */
+.main-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hlavička */
+.header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Obsah */
+.content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Boční panel */
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+/* Tabulka uživatelů */
+.users-table {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Tělo dokumentu a html */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+  .sidebar a:hover {
+    background-color: #495057;
+  }
+  
+  .users-table {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  .users-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .users-table th, .users-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .users-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
