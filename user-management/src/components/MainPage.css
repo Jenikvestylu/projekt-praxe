@@ -1,13 +1,14 @@
-/* Hlavní stránka */
+
 .main-page {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* Hlavička */
+
 .header {
   background-color: #4CAF50;
   color: white;
@@ -17,14 +18,14 @@
   flex-shrink: 0;
 }
 
-/* Obsah */
+
 .content {
   display: flex;
   flex: 1;
   overflow: hidden;
 }
 
-/* Boční panel */
+
 .sidebar {
   width: 250px;
   background-color: #f4f4f4;
@@ -32,14 +33,14 @@
   flex-shrink: 0;
 }
 
-/* Tabulka uživatelů */
+
 .users-table {
   flex: 1;
   padding: 10px;
   overflow-y: auto;
 }
 
-/* Tělo dokumentu a html */
+
 html, body {
   height: 100%;
   margin: 0;

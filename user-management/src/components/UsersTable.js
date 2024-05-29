@@ -4,12 +4,12 @@ import './UsersTable.css';
 const UsersTable = () => {
   return (
     <div className="users-table">
-      <h2>Users List</h2>
+      <h2>Uživatelé</h2>
       <table>
         <thead>
           <tr>
             <th>ID</th>
-            <th>Username</th>
+            <th>Název uživatele</th>
             <th>Role</th>
           </tr>
         </thead>
@@ -22,7 +22,7 @@ const UsersTable = () => {
           <tr>
             <td>2</td>
             <td>user2</td>
-            <td>User</td>
+            <td>Uživatel</td>
           </tr>
         </tbody>
       </table>

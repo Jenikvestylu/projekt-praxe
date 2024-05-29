@@ -1,7 +1,7 @@
 .header {
   background-color: #4CAF50;
   color: white;
-  padding: 10px 20px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,7 +17,13 @@
   align-items: center;
 }
 
+.user-info img {
+  width: 20px; 
+  margin-right: 5px; 
+}
+
 .user-info span {
+  font-size: 14px; 
   margin-right: 10px;
 }
 

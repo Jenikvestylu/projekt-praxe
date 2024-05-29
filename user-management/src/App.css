@@ -2,8 +2,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  transition: background-image 0.3s ease-in-out;
   background-size: cover;
   background-position: center;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App.logged-in {
+  background-image: none;
 }
 
 .blur-background {
@@ -12,20 +24,21 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(5px); /* Efekt blur pouze pro tento prvek */
-  z-index: -1; /* Zařadíme tento prvek za ostatní obsah */
+  background-image: url('https://img.freepik.com/free-vector/realistic-background-futuristic-style_23-2149129125.jpg');
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(5px);
+  z-index: -1;
 }
 
 #login-section {
   max-width: 400px;
-  margin: 100px auto; /* Posune formulář doprostřed stránky */
   padding: 20px;
-  background-image: url('https://www.egnyte.com/sites/default/files/inline-images/The%20expansion%20of%20cloud%20applications%20has%20added%20to....png'); /* Nastavte vaši pozadíovou fotku */
-  background-size: cover;
-  background-position: center;
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: opacity 0.3s ease-in-out;
 }
 
 #login-section h2 {
@@ -33,8 +46,8 @@ body {
 }
 
 #login-section img {
-  width: 80px; /* Velikost obrázku uživatele */
-  margin-bottom: 20px; /* Mezera pod obrázkem */
+  width: 80px;
+  margin-bottom: 20px;
 }
 
 #login-form label {
@@ -60,6 +73,7 @@ body {
   cursor: pointer;
   border-radius: 3px;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
 #login-form button:hover {
@@ -71,10 +85,20 @@ body {
   cursor: not-allowed;
 }
 
+.error {
+  color: #d8000c;
+  background-color: #ffbaba;
+  padding: 10px;
+  border: 1px solid #d8000c;
+  border-radius: 3px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
 .main-page {
-  background-image: none; /* Zrušíme pozadí s obrázkem */
+  background-image: none;
 }
 
 .content {
-  /* CSS pro obsah */
 }
+

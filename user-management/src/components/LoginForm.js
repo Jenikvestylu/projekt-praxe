@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoginForm.css';
+import user from "../components/user.png";
 
-
-const LoginForm = ({ onLogin }) => {
+const LoginForm = ({ onLogin, error }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [displayError, setDisplayError] = useState(false);
+
+  useEffect(() => {
+    if (error) {
+      setDisplayError(true);
+      const timer = setTimeout(() => {
+        setDisplayError(false);
+      }, 10000); 
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,8 +23,9 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <section id="login-section" style={{ backgroundImage: `url({https://www.egnyte.com/sites/default/files/inline-images/The%20expansion%20of%20cloud%20applications%20has%20added%20to....png})` }}> 
+    <section id="login-section">
       <h2>Přihlášení</h2>
+      <img src={user} alt="user icon" />
       <form id="login-form" onSubmit={handleSubmit}>
         <label htmlFor="username">Uživatelské jméno:</label>
         <input
@@ -32,6 +44,7 @@ const LoginForm = ({ onLogin }) => {
           required
         />
         <button type="submit">Přihlásit se</button>
+        {displayError && <div className="error">Uživatelské jméno nebo heslo není správné</div>}
       </form>
     </section>
   );
