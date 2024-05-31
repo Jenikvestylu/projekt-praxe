@@ -2,6 +2,8 @@ import React from 'react';
 import './UsersTable.css';
 
 const UsersTable = () => {
+  const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+
   return (
     <div className="users-table">
       <h2>Uživatelé</h2>
@@ -14,16 +16,13 @@ const UsersTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>user1</td>
-            <td>Admin</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>user2</td>
-            <td>Uživatel</td>
-          </tr>
+          {storedUsers.map((user, index) => (
+            <tr key={index}>
+              <td>{user.id}</td>
+              <td>{user.username}</td>
+              <td>{user.role}</td> {}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

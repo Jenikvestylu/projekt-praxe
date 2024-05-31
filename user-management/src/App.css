@@ -14,8 +14,19 @@ body {
   align-items: center;
 }
 
-.App.logged-in {
-  background-image: none;
+.App.light {
+  background-color: white;
+  color: black;
+}
+
+.App.dark {
+  background-color: black;
+  color: white;
+}
+
+.App.monochrome {
+  background-color: gray;
+  color: black;
 }
 
 .blur-background {
@@ -100,5 +111,7 @@ body {
 }
 
 .content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 }
-

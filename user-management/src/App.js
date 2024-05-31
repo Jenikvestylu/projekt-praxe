@@ -14,9 +14,14 @@ const App = () => {
     if (storedUser) {
       setUser(JSON.parse(storedUser));
       setIsLoggedIn(true);
-      setShowContent(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setTimeout(() => setShowContent(true), 300);
+    }
+  }, [isLoggedIn]);
 
   const handleLogin = (username, password) => {
     const defaultUser = { username: 'admin', password: 'admin123' };
@@ -24,10 +29,8 @@ const App = () => {
       localStorage.setItem('loggedUser', JSON.stringify(defaultUser));
       setUser(defaultUser);
       setIsLoggedIn(true);
-      setShowContent(true);
-      setError(''); 
     } else {
-      setError('Uživatelské jméno nebo heslo není správné'); 
+      setError('Uživatelské jméno nebo heslo není správné');
     }
   };
 
@@ -36,7 +39,6 @@ const App = () => {
     setUser(null);
     setIsLoggedIn(false);
     setShowContent(false);
-    setError(''); 
   };
 
   return (

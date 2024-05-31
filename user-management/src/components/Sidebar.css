@@ -4,6 +4,10 @@
   padding: 10px;
 }
 
+.sidebar nav {
+  margin-bottom: auto;
+}
+
 .sidebar nav a {
   display: block;
   padding: 10px 0;
@@ -13,4 +17,27 @@
 
 .sidebar nav a:hover {
   background-color: #ddd;
+}
+
+.settings-section {
+  margin-top: 710px; 
+  padding: 10px 0;
+}
+
+.settings-section a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  background-color: #e0e0e0;
+  text-align: center;
+}
+
+.settings-section a:hover {
+  background-color: #ddd;
+}
+
+.settings-icon {
+  width: 40px; 
+  height: auto;
 }
