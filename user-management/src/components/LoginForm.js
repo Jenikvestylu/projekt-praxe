@@ -19,7 +19,7 @@ const LoginForm = ({ onLogin, error }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onLogin(username, password);
+    onLogin(username, password); 
   };
 
   return (

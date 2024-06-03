@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './UsersTable.css';
 
 const UsersTable = () => {
-  const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+  const [storedUsers, setStoredUsers] = useState([]);
+
+  useEffect(() => {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    setStoredUsers(users);
+  }, []);
 
   return (
     <div className="users-table">
@@ -19,8 +24,8 @@ const UsersTable = () => {
           {storedUsers.map((user, index) => (
             <tr key={index}>
               <td>{user.id}</td>
-              <td>{user.username}</td>
-              <td>{user.role}</td> {}
+              <td>{user.nickname}</td>
+              <td>{user.role}</td>
             </tr>
           ))}
         </tbody>

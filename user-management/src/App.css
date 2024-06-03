@@ -19,6 +19,7 @@ body {
   color: black;
 }
 
+
 .App.dark {
   background-color: black;
   color: white;
@@ -28,6 +29,13 @@ body {
   background-color: gray;
   color: black;
 }
+
+body.login {
+  background-image: url('https://img.freepik.com/free-vector/realistic-background-futuristic-style_23-2149129125.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 
 .blur-background {
   position: fixed;
@@ -115,3 +123,48 @@ body {
   flex: 1;
   overflow: hidden;
 }
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+}
+
+[data-theme='light'] {
+  --background-color: #fff;
+  --text-color: #000;
+}
+
+[data-theme='monochrome'] {
+  --background-color: #f0f0f0;
+  --text-color: #333;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+/* Add these styles to your CSS file */
+
+body.login .App {
+  background-image: url('https://img.freepik.com/free-vector/realistic-background-futuristic-style_23-2149129125.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+body.login .blur-background {
+  background-image: none; 
+}
+
+body.logged-in .App {
+  background-image: none;
+}
+
+#login-section {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
+  padding: 20px;
+  max-width: 400px;
+}
+

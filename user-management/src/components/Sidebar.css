@@ -1,35 +1,125 @@
+.menu-icon {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu-icon img {
+  width: 30px;
+  height: 30px;
+}
+
 .sidebar {
-  width: 250px;
-  background-color: #f4f4f4;
-  padding: 10px;
+  width: 250px; 
+  background-color: #fff; 
+  color: #333; 
+  height: 100vh; 
+  position: fixed; 
+  top: 0; 
+  left: -300px; 
+  padding-top: 60px; 
+  transition: left 0.3s ease; 
+  overflow: hidden; 
+  box-shadow: 2px 0 5px rgb(0, 0, 0); 
+  display: flex; 
+  flex-direction: column; 
 }
 
-.sidebar nav {
-  margin-bottom: auto;
+.sidebar.open {
+  left: 0;
 }
 
-.sidebar nav a {
-  display: block;
-  padding: 10px 0;
+.sidebar-header {
+  padding: 20px;
+  background-color: #4caf50; 
+  color: white; 
+  text-align: center;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+}
+
+.sidebar-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-item {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-item:hover {
+  background-color: #ffffff;
+}
+
+.sidebar-link {
+  color: #4caf50;
   text-decoration: none;
-  color: #333;
+  display: flex;
+  align-items: center;
 }
 
-.sidebar nav a:hover {
-  background-color: #ddd;
+.sidebar-link:hover {
+  color: #4caf50;
+}
+
+
+.sidebar-link:hover {
+  color: white; 
+}
+
+.sidebar-icon {
+  width: 20px; 
+  height: 20px; 
+  margin-right: 10px;
 }
 
 .settings-section {
-  margin-top: 710px; 
-  padding: 10px 0;
+  padding: 20px;
+  background-color: #4caf50;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 60px;
+}
+
+.settings-icon {
+  width: 30px; 
+  height: 30px; 
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto; 
+    position: relative;
+    left: -100%;
+  }
+
+  .sidebar.open {
+    left: 0; 
+  }
+
+  .sidebar-header {
+    padding: 10px; 
+  }
+
+  .sidebar-item {
+    padding: 10px; 
+  }
 }
 
 .settings-section a {
   display: block;
   padding: 10px;
   text-decoration: none;
-  color: #333;
-  background-color: #e0e0e0;
+  color: rgb(255, 255, 255);
+  background-color: white;
   text-align: center;
 }
 
@@ -38,6 +128,6 @@
 }
 
 .settings-icon {
-  width: 40px; 
+  width: 40px;
   height: auto;
 }

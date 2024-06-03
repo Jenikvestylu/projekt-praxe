@@ -1,41 +1,72 @@
 .header {
   background-color: #4CAF50;
   color: white;
-  padding: 10px;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.header h1 {
+h1 {
+  font-size: 1.5em;
   margin: 0;
-  font-size: 24px;
 }
 
 .user-info {
   display: flex;
-  align-items: center;
+  align-items: center; /* Center items vertically */
 }
 
-.user-info img {
-  width: 20px; 
-  margin-right: 5px; 
+.user-icon {
+  width: 40px; /* Set width for user icon */
+  height: 40px; /* Set height for user icon */
+  border-radius: 50%; /* Make icon circular */
+  margin-right: 10px; /* Space between icon and text */
 }
 
-.user-info span {
-  font-size: 14px; 
-  margin-right: 10px;
+.user-text {
+  margin-right: 15px; /* Space between text and button */
 }
 
-.header button {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
+.logout-button {
+  background-color: #f44336; /* Red background for button */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  padding: 8px 16px; /* Padding inside the button */
+  font-size: 0.9em; /* Adjusted font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth background transition */
 }
 
-.header button:hover {
-  background-color: #d32f2f;
+.logout-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to start */
+  }
+
+  .user-info {
+    margin-top: 10px; /* Space between title and user info */
+  }
+
+  h1 {
+    font-size: 1.2em; /* Smaller font size for title */
+  }
+
+  .logout-button {
+    padding: 6px 12px; /* Smaller padding for button */
+    font-size: 0.8em; /* Smaller font size for button */
+  }
 }
