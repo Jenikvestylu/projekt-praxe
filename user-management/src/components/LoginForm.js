@@ -44,7 +44,7 @@ const LoginForm = ({ onLogin, error }) => {
           required
         />
         <button type="submit">Přihlásit se</button>
-        {displayError && <div className="error">Uživatelské jméno nebo heslo není správné</div>}
+        {displayError && <div className="error">{error}</div>}
       </form>
     </section>
   );

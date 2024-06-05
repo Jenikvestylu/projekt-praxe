@@ -32,28 +32,41 @@ const App = () => {
     }
   }, [isLoggedIn]);
 
-  const handleLogin = (username, password) => {
-    const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+  const handleLogin = async (username, password) => {
     const defaultUser = { username: 'admin', password: 'admin123' };
-    
-    // Pokud se pokusíme přihlásit jako admin
+
     if (username === defaultUser.username && password === defaultUser.password) {
       localStorage.setItem('loggedUser', JSON.stringify(defaultUser));
       setUser(defaultUser);
       setIsLoggedIn(true);
       setError('');
-    } 
-    // Pokud se pokusíme přihlásit jako některý z přidaných uživatelů
-    else {
-      const userToLogin = storedUsers.find(user => user.username === username && user.password === password);
-      if (userToLogin) {
-        localStorage.setItem('loggedUser', JSON.stringify(userToLogin));
-        setUser(userToLogin);
-        setIsLoggedIn(true);
-        setError('');
-      } else {
+      console.log('úspěšně přihlášen jako admin');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:3000/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      });
+
+      if (!response.ok) {
         setError('Uživatelské jméno nebo heslo není správné');
+        return;
       }
+
+      const data = await response.json();
+      localStorage.setItem('loggedUser', JSON.stringify(data));
+      setUser(data);
+      setIsLoggedIn(true);
+      setError('');
+      console.log('úspěšně přihlášen');
+    } catch (err) {
+      setError('Chyba přihlášení. Zkuste to prosím znovu.');
+      console.log('Login error:', err);
     }
   };
 
